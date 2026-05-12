@@ -58,30 +58,6 @@ Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
 
 (향후 추가 예정)
 
-## 노트북 간 작업 환경 동기화
-
-**여러 노트북에서 같은 환경으로 작업하려면:**
-
-```bash
-# 노트북 1 (처음)
-git clone https://github.com/gobangMkt/my-claude-project
-cd my-claude-project
-
-# 노트북 1 (매번)
-git pull
-cd 프로젝트/RoutineLog-
-[작업] → git push
-
-# 노트북 2 (처음)
-git clone https://github.com/gobangMkt/my-claude-project
-cd my-claude-project
-
-# 노트북 2 (다음)
-git pull  ← 노트북 1의 변경사항 반영
-cd 프로젝트/RoutineLog-
-[이어서 작업] → git push
-```
-
 ## 프로젝트 목록
 
 | 프로젝트 | 언어 | 상태 |
@@ -110,30 +86,10 @@ cd 프로젝트/RoutineLog-
 - root: `master`
 - 각 프로젝트: `master`
 
-## 문제 해결
+## 행동 규칙
+- 이미 읽은 파일은 내용이 변경되지 않았다면 다시 읽지 말 것
+- 단순 질문에 ls/cat 등 도구 호출 금지, 지식 기반으로 답할 것
+- 이미 설명한 내용은 반복하지 말 것
 
-### Git pull 충돌 시
-```bash
-git status  # 상태 확인
-git diff    # 변경사항 비교
-# 충돌 해결 후
-git add .
-git commit -m "fix: merge conflict"
-git push
-```
-
-### 잘못 커밋했을 때
-```bash
-git reset --soft HEAD~1  # 마지막 커밋 취소 (스테이징 유지)
-git commit -m "fix: 수정된 메시지"
-```
-
-## 체크리스트 (새 프로젝트 시작)
-
-- [ ] 프로젝트 폴더 생성: `프로젝트/{project-name}/`
-- [ ] `git init` 실행
-- [ ] GitHub에 저장소 생성
-- [ ] `.gitignore` 추가
-- [ ] CLAUDE.md 작성 (프로젝트별 규칙)
-- [ ] 첫 커밋: `git commit -m "initial commit"`
-- [ ] `git push origin master`
+## 미리보기 창
+- Claude Preview(`mcp__Claude_Preview__preview_*`)는 사용자가 명시적으로 "미리보기", "preview 띄워줘" 등 요청할 때만 호출. 그 외에는 절대 자동으로 `preview_start` 호출하지 말 것.
