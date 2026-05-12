@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/.claude/make-run-bat.sh",
+            "timeout": 10,
+            "statusMessage": "run.bat 생성 중..."
+          }
+        ]
+      }
+    ]
+  }
+}

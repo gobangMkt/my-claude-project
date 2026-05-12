@@ -37,3 +37,13 @@ Thumbs.db
 # Misc
 .claude/
 프로젝트/.claude/
+
+# Claude Code
+backups/
+plans/
+projects/
+sessions/
+session-env/
+shell-snapshots/
+todos/
+statsig/
